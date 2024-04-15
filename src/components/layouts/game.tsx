@@ -30,17 +30,17 @@ export default function Game() {
         
         return (
           <li key={move} className="mb-1">
-            <button onClick={() => jumpTo(move)} className="w-full text-small text-stone-600 text-center py-2 px-8 border border-stone-800 rounded-md">{description}</button>
+            <button onClick={() => jumpTo(move)} className="w-full text-small text-stone-600 text-center py-2 px-8 border border-stone-800 rounded-md hover:text-stone-400 hover:border-stone-600">{description}</button>
           </li>
         );
     });
 
     return (
-        <div className="flex flex-col gap-y-4">
-            <div className="flex flex-col gap-y-10 text-center">
+        <div className="w-full flex items-center flex-col gap-y-4 relative">
+            <div className="w-[242px] flex flex-col gap-y-10 text-center">
                 <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
             </div>
-            <div className="w-full">
+            <div className="w-auto relative lg:absolute lg:right-10 lg:top-[3.5em]">
                 <ol>
                     {moves}
                 </ol>
